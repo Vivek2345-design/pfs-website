@@ -1,0 +1,173 @@
+/* Base and typography /
+:root {
+--brand: #ef4444; / Red 500 /
+--brand-dark: #dc2626; / Red 600 /
+--ink: #1a202c; / Gray-900 /
+--bg: #f8f9fa; / Light background /
+--indigo: #4f46e5; / Indigo-600 */
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+background-color: var(--bg);
+color: var(--ink);
+}
+
+/* Utility helpers */
+.container {
+max-width: 1200px;
+}
+
+.card-hover {
+transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+
+.card-hover:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+}
+
+/* Gradients to match attached design */
+.hero-gradient {
+background: linear-gradient(135deg, #fff1f2 0%, #e0f2fe 100%);
+}
+
+.challenge-gradient {
+background: linear-gradient(135deg, var(--indigo) 0%, var(--brand) 100%);
+}
+
+/* Buttons */
+.btn-primary {
+background-color: var(--brand);
+color: #fff;
+transition: background-color .3s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-primary:hover {
+background-color: var(--brand-dark);
+}
+
+.btn-secondary {
+background-color: var(--ink);
+color: #fff;
+transition: background-color .3s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-secondary:hover {
+background-color: #374151; /* Gray-700 */
+}
+
+/* Nav underline hover effect */
+.nav-link-hover {
+position: relative;
+transition: color .3s ease;
+}
+
+.nav-link-hover::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 50%;
+transform: translateX(-50%);
+background-color: var(--brand);
+transition: width .3s ease-in-out;
+}
+
+.nav-link-hover:hover::after,
+.nav-link-hover.active::after {
+width: 60%;
+}
+
+/* Chips/filters /
+.filter-chip {
+border: 1px solid #e5e7eb; / gray-200 */
+background: #fff;
+color: var(--ink);
+transition: all .2s ease;
+}
+
+.filter-chip.active {
+background: var(--brand);
+color: #fff;
+border-color: var(--brand);
+}
+
+/* Image treatment fallbacks */
+.img-cover {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center;
+}
+
+/* Footer tweaks */
+footer .border-top {
+border-top: 1px solid rgba(255,255,255,.12);
+}
+
+/* Forms */
+.input,
+select,
+textarea {
+transition: box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+}
+
+.input:focus,
+select:focus,
+textarea:focus {
+outline: none;
+box-shadow: 0 0 0 3px rgba(239,68,68,.2);
+border-color: var(--brand);
+}
+
+/* Accessibility focus visible /
+:focus-visible {
+outline: 3px solid rgba(79,70,229,.35); / indigo ring */
+outline-offset: 2px;
+}
+
+/* Header shadow subtle enhancement */
+.site-header {
+box-shadow: 0 1px 0 0 rgba(0,0,0,.06);
+background: rgba(255,255,255,.9);
+backdrop-filter: saturate(180%) blur(6px);
+}
+
+/* Badge */
+.badge {
+display: inline-block;
+padding: 0.25rem 0.5rem;
+font-size: .75rem;
+font-weight: 700;
+border-radius: 9999px;
+}
+
+/* Grid helpers (optional if not using Tailwind utility) */
+.grid-gap-8 {
+display: grid;
+gap: 2rem;
+}
+
+/* Responsive helpers */
+@media (max-width: 640px) {
+.hide-sm {
+display: none !important;
+}
+}
+
+/* Animations (optional) */
+.fade-in {
+animation: fade-in .4s ease both;
+}
+
+@keyframes fade-in {
+from { opacity: 0; transform: translateY(6px); }
+to { opacity: 1; transform: translateY(0); }
+}
+

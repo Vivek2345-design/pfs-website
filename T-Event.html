@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Discover Upcoming Events | Perfect Fitness Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Icons (optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background:#F8F9FA; color:#111827; }
+    .hero-grad { background: linear-gradient(135deg, #FFF1F2 0%, #E0F2FE 100%); }
+    .pill { border:1px solid rgba(17,24,39,0.08); }
+    .card { transition: transform .25s ease, box-shadow .25s ease; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 16px 30px rgba(0,0,0,.08); }
+    .btn-primary { background:#EF4444; color:#fff; }
+    .btn-primary:hover { background:#DC2626; }
+    .btn-ghost { background:#fff; border:1px solid #E5E7EB; }
+    .tag { background: #F3F4F6; color:#374151; }
+    .badge { font-size:12px; font-weight:700; padding:.35rem .6rem; border-radius:999px; }
+    .badge-green { background:#DCFCE7; color:#166534; }
+    .badge-blue { background:#DBEAFE; color:#1E3A8A; }
+    .badge-orange { background:#FFEDD5; color:#9A3412; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-100 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-2">
+        <img src="https://profitsports.in/images/pfs-color.png" alt="PFS Logo" class="h-10 w-auto">
+        <span class="sr-only">Perfect Fitness Solutions</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="/" class="text-gray-700 hover:text-red-500 font-medium">Home</a>
+        <a href="#discover" class="text-gray-700 hover:text-red-500 font-medium">Discover</a>
+        <a href="#calendar" class="text-gray-700 hover:text-red-500 font-medium">Calendar</a>
+        <a href="#faq" class="text-gray-700 hover:text-red-500 font-medium">FAQ</a>
+        <a href="#contact" class="btn-primary rounded-full px-4 py-2 font-semibold">Get Started</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg btn-ghost">
+        <i class="fa-solid fa-bars text-gray-700"></i>
+      </button>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden px-4 sm:px-6 pb-4">
+      <div class="flex flex-col space-y-2">
+        <a href="/" class="py-2 text-gray-700">Home</a>
+        <a href="#discover" class="py-2 text-gray-700">Discover</a>
+        <a href="#calendar" class="py-2 text-gray-700">Calendar</a>
+        <a href="#faq" class="py-2 text-gray-700">FAQ</a>
+        <a href="#contact" class="py-2 text-gray-700">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-grad">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 lg:py-20">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+            Discover Upcoming Events
+          </h1>
+          <p class="mt-4 text-lg text-gray-700 max-w-xl">
+            Curated races and community runs by Coach Ravinder—find the perfect start line and lock in an early-bird deal.
+          </p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#discover" class="btn-primary rounded-full px-6 py-3 font-bold shadow">
+              Browse Events
+            </a>
+            <a href="#calendar" class="btn-ghost rounded-full px-6 py-3 font-bold">
+              Full Calendar
+            </a>
+          </div>
+          <div class="mt-6 flex items-center gap-2 text-sm text-gray-600">
+            <span class="badge badge-blue">2025</span>
+            <span class="badge badge-green">Early-bird Deals</span>
+            <span class="badge badge-orange">Community</span>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <img src="https://images.unsplash.com/photo-1530029323380-27ea335b8734?q=80&w=1600&auto=format&fit=crop"
+               alt="Runners"
+               class="rounded-2xl shadow-2xl w-full h-[360px] object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Discover Filters -->
+  <section id="discover" class="bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-10 lg:py-14">
+      <div class="flex items-center justify-between gap-4 flex-wrap">
+        <h2 class="text-2xl md:text-3xl font-bold">What’s on the Start Line?</h2>
+        <div class="text-sm text-gray-500">Updated for 2025</div>
+      </div>
+
+      <!-- Controls -->
+      <div class="mt-6 grid md:grid-cols-4 gap-3">
+        <div class="col-span-2 md:col-span-1">
+          <input id="search" type="text" placeholder="Search by name or venue"
+                 class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400">
+        </div>
+        <div>
+          <select id="filterCity" class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400">
+            <option value="">All Cities</option>
+            <option>Gurugram</option>
+            <option>New Delhi</option>
+            <option>Panchkula</option>
+            <option>Delhi</option>
+          </select>
+        </div>
+        <div>
+          <select id="filterMonth" class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400">
+            <option value="">Any Month</option>
+            <option value="08">August</option>
+            <option value="10">October</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+        <div>
+          <select id="filterType" class="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-400">
+            <option value="">All Categories</option>
+            <option>Running</option>
+            <option>Walkathon</option>
+            <option>Kids Run</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Pills -->
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button data-pill="EarlyBird" class="pill px-3 py-1.5 rounded-full text-sm bg-white hover:bg-gray-50">Early-bird</button>
+        <button data-pill="HalfMarathon" class="pill px-3 py-1.5 rounded-full text-sm bg-white hover:bg-gray-50">Half Marathon</button>
+        <button data-pill="5K" class="pill px-3 py-1.5 rounded-full text-sm bg-white hover:bg-gray-50">5K</button>
+        <button data-pill="10K" class="pill px-3 py-1.5 rounded-full text-sm bg-white hover:bg-gray-50">10K</button>
+        <button data-pill="Trail" class="pill px-3 py-1.5 rounded-full text-sm bg-white hover:bg-gray-50">Trail</button>
+        <button id="clearFilters" class="px-3 py-1.5 rounded-full text-sm bg-gray-100 hover:bg-gray-200">Clear</button>
+      </div>
+
+      <!-- Grid -->
+      <div id="eventsGrid" class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+
+      <!-- Empty State -->
+      <div id="emptyState" class="hidden mt-10 text-center">
+        <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-red-50 text-red-500 text-xl">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <p class="mt-3 font-semibold text-gray-800">No events match the filters</p>
+        <p class="text-gray-500">Try clearing filters or searching a different keyword.</p>
+      </div>
+
+      <!-- Legend -->
+      <div class="mt-10 flex items-center gap-3 text-sm text-gray-600">
+        <span class="badge badge-green">Up to X% off</span> denotes current discount.
+        <span class="badge badge-blue">Featured</span> denotes highlighted events.
+      </div>
+    </div>
+  </section>
+
+  <!-- Calendar CTA -->
+  <section id="calendar" class="bg-gradient-to-r from-red-500 to-indigo-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 text-center">
+      <h3 class="text-2xl md:text-3xl font-extrabold">See the Full 2025 Calendar</h3>
+      <p class="mt-2 text-red-50">Browse seasonally and plan training blocks with confidence.</p>
+      <a href="#discover" class="mt-6 inline-block bg-white text-red-600 rounded-full px-8 py-3 font-bold shadow hover:scale-105 transition">
+        Back to Discover
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+      <h3 class="text-2xl font-bold">FAQ</h3>
+      <div class="mt-6 space-y-4">
+        <details class="bg-gray-50 p-4 rounded-xl">
+          <summary class="font-semibold cursor-pointer">How do discounts work?</summary>
+          <p class="mt-2 text-gray-600">Early-bird discounts are applied during registration and may change without notice.</p>
+        </details>
+        <details class="bg-gray-50 p-4 rounded-xl">
+          <summary class="font-semibold cursor-pointer">Are there corporate or team entries?</summary>
+          <p class="mt-2 text-gray-600">Yes—contact us for corporate wellness and team registrations.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-900 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid md:grid-cols-3 gap-8">
+      <div>
+        <h4 class="font-semibold text-white">Perfect Fitness Solutions Pvt Ltd</h4>
+        <p class="mt-2 text-sm">Community-first running and wellness experiences across India.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Quick Links</h4>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="/" class="hover:text-white">Home</a></li>
+          <li><a href="#discover" class="hover:text-white">Discover</a></li>
+          <li><a href="#calendar" class="hover:text-white">Calendar</a></li>
+          <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white">Stay Updated</h4>
+        <form class="mt-3 flex gap-2">
+          <input type="email" placeholder="Email address" class="flex-1 rounded-lg px-3 py-2 bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-400">
+          <button class="btn-primary px-4 rounded-lg">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 py-6 text-center text-xs text-gray-500">
+      © 2025 Perfect Fitness Solutions Pvt Ltd. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+
+    // Event Data (from your 2025 upcoming list)
+    const events = [
+      {
+        id: 'cj-ggm-2025',
+        name: 'Corpo Jumble 2025 Gurugram',
+        date: '2025-08-03',
+        day: 'Sun',
+        venue: 'International Tech Park, Sec 59, Gurugram',
+        city: 'Gurugram',
+        categories: ['Running'],
+        tags: ['10K','5K','1 Mile','EarlyBird'],
+        href: 'https://corpojumble.coachravinder.com/index.html',
+        img: 'image/Corpo.jpg',
+        discount: 14,
+        featured: true
+      },
+      {
+        id: 'dhm-2025',
+        name: 'Dwarka Half Marathon',
+        date: '2025-08-31',
+        day: 'Sun',
+        venue: 'Vegas Mall, Sec 14, Dwarka, New Delhi',
+        city: 'New Delhi',
+        categories: ['Running','Walkathon'],
+        tags: ['HalfMarathon','15K','10K','5K','Walk','EarlyBird'],
+        href: 'https://dhm.coachravinder.com/index.html',
+        img: 'image/Dwarka.jpg',
+        discount: 16,
+        featured: true
+      },
+      {
+        id: 'freedom-5-2025',
+        name: 'Freedom Run 5.0',
+        date: '2025-10-19',
+        day: 'Sun',
+        venue: 'Embassy of Hungary in Delhi',
+        city: 'Delhi',
+        categories: ['Running','Kids Run'],
+        tags: ['10K','5.6K','Kids','EarlyBird'],
+        href: 'https://freedomrun.coachravinder.com/index.html',
+        img: 'image/Freedom.jpg',
+        discount: 38,
+        featured: false
+      },
+      {
+        id: 'morni-2025',
+        name: 'Morni Hills Marathon 2025',
+        date: '2025-12-07',
+        day: 'Sat',
+        venue: 'Holy Child School, Sec 31, Panchkula',
+        city: 'Panchkula',
+        categories: ['Running'],
+        tags: ['Marathon','30K','HalfMarathon','10K','5K','EarlyBird','Trail'],
+        href: 'https://mornihillsmarathon.coachravinder.com/index.html',
+        img: 'image/Morni.jpg',
+        discount: 27,
+        featured: false
+      }
+    ];
+
+    // DOM
+    const grid = document.getElementById('eventsGrid');
+    const emptyState = document.getElementById('emptyState');
+    const search = document.getElementById('search');
+    const filterCity = document.getElementById('filterCity');
+    const filterMonth = document.getElementById('filterMonth');
+    const filterType = document.getElementById('filterType');
+    const pillButtons = document.querySelectorAll('[data-pill]');
+    const clearFilters = document.getElementById('clearFilters');
+
+    let activePill = '';
+
+    function fmtDate(iso) {
+      const d = new Date(iso + 'T00:00:00');
+      const opts = { day: '2-digit', month: 'short', year: 'numeric' };
+      return d.toLocaleDateString('en-GB', opts);
+    }
+
+    function cardTemplate(e) {
+      const month = e.date.split('-')[1];
+      const discountBadge = e.discount ? `<span class="badge badge-green">Up to ${e.discount}% off</span>` : '';
+      const featured = e.featured ? `<span class="badge badge-blue">Featured</span>` : '';
+      const tags = (e.tags || []).slice(0, 4).map(t => `<span class="tag px-2 py-1 rounded-full text-xs">${t}</span>`).join(' ');
+      const fallback = "https://placehold.co/560x360/eff6ff/1d4ed8?text=Event";
+
+      return `
+        <article class="card bg-white rounded-2xl overflow-hidden border border-gray-100 flex flex-col" data-city="${e.city}" data-month="${month}" data-type="${(e.categories||[]).join(',')}" data-name="${e.name.toLowerCase()} ${e.venue.toLowerCase()} ${e.tags.join(' ').toLowerCase()}">
+          <div class="relative">
+            <img src="${e.img}" alt="${e.name}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='${fallback}';">
+            <div class="absolute top-3 left-3 flex gap-2">
+              ${discountBadge}
+              ${featured}
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="text-lg font-bold text-gray-900 leading-snug">${e.name}</h3>
+            <p class="mt-1 text-sm text-gray-500">${e.venue}</p>
+            <p class="mt-1 text-sm text-gray-600 font-medium">${fmtDate(e.date)} (${e.day}) • ${(e.categories||[]).join(', ')}</p>
+            <div class="mt-3 flex flex-wrap gap-2">${tags}</div>
+            <div class="mt-auto pt-4">
+              <a href="${e.href}" class="font-bold text-red-600 hover:text-red-700">View event details →</a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function render(list) {
+      grid.innerHTML = list.map(cardTemplate).join('');
+      emptyState.classList.toggle('hidden', list.length !== 0);
+    }
+
+    function matchesFilters(e, q, city, month, type, pill) {
+      const qOk = !q || (e.name + ' ' + e.venue + ' ' + (e.tags||[]).join(' ')).toLowerCase().includes(q);
+      const cityOk = !city || e.city === city;
+      const monthOk = !month || e.date.split('-')[1] === month;
+      const typeOk = !type || (e.categories||[]).some(c => c === type);
+      const pillOk = !pill || (e.tags||[]).some(t => t.toLowerCase() === pill.toLowerCase());
+      return qOk && cityOk && monthOk && typeOk && pillOk;
+    }
+
+    function applyFilters() {
+      const q = (search.value || '').toLowerCase().trim();
+      const city = filterCity.value;
+      const month = filterMonth.value;
+      const type = filterType.value;
+      const list = events.filter(e => matchesFilters(e, q, city, month, type, activePill));
+      render(list);
+    }
+
+    // Init
+    render(events);
+
+    // Listeners
+    search.addEventListener('input', applyFilters);
+    [filterCity, filterMonth, filterType].forEach(el => el.addEventListener('change', applyFilters));
+
+    pillButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = btn.getAttribute('data-pill');
+        activePill = activePill === val ? '' : val;
+        pillButtons.forEach(b => b.classList.remove('bg-gray-100'));
+        if (activePill) btn.classList.add('bg-gray-100');
+        applyFilters();
+      });
+    });
+
+    clearFilters.addEventListener('click', () => {
+      search.value = '';
+      filterCity.value = '';
+      filterMonth.value = '';
+      filterType.value = '';
+      activePill = '';
+      pillButtons.forEach(b => b.classList.remove('bg-gray-100'));
+      applyFilters();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stories & Impact | Perfect Fitness Solutions</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Icons (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Optional site CSS -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',sans-serif; background:#F8F9FA; color:#1a202c; }
+    .hero-gradient { background: linear-gradient(135deg,#FFF1F2 0%,#E0F2FE 100%); }
+    .challenge-gradient { background: linear-gradient(135deg,#4F46E5 0%,#EF4444 100%); }
+    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04); }
+    .btn-primary { background:#EF4444; color:#fff; transition: background-color .3s; }
+    .btn-primary:hover { background:#DC2626; }
+    .btn-secondary { background:#1a202c; color:#fff; transition: background-color .3s; }
+    .btn-secondary:hover { background:#374151; }
+    .nav-link-hover { position:relative; transition: color .3s; }
+    .nav-link-hover::after { content:''; position:absolute; width:0; height:2px; bottom:-4px; left:50%; transform:translateX(-50%); background:#EF4444; transition: width .3s; }
+    .nav-link-hover:hover::after, .nav-link-hover.active::after { width:60%; }
+    .filter-chip { border:1px solid #e5e7eb; }
+    .filter-chip.active { background:#ef4444; color:#fff; border-color:#ef4444; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Header & Navbar (same structure as home page) -->
+  <header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="/index.html" class="flex items-center space-x-2">
+        <img src="https://profitsports.in/images/pfs-color.png" alt="Perfect Fitness Solutions Pvt Ltd Logo" class="h-12 w-auto">
+      </a>
+      <div class="lg:hidden">
+        <button id="nav-toggle" class="text-gray-800 focus:outline-none" aria-label="Open Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+        </button>
+      </div>
+      <div id="nav-menu" class="hidden lg:flex lg:items-center lg:space-x-6">
+        <a href="/index.html" class="text-gray-700 nav-link-hover font-medium">Home</a>
+        <a href="/events.html" class="text-gray-700 nav-link-hover font-medium">Signature Strides</a>
+        <a href="/corporate.html" class="text-gray-700 nav-link-hover font-medium">Power Up @ Work</a>
+        <a href="/coaching.html" class="text-gray-700 nav-link-hover font-medium">Fuel Lab</a>
+        <a href="/stories.html" class="text-gray-700 nav-link-hover font-medium active">Stories & Impact</a>
+        <a href="/coaching.html#contact" class="btn-primary rounded-full px-5 py-2.5 font-semibold ml-2">Get Started</a>
+      </div>
+    </nav>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4 border-t border-gray-200">
+      <a href="/index.html" class="block py-2 text-gray-700 font-medium">Home</a>
+      <a href="/events.html" class="block py-2 text-gray-700 font-medium">Signature Strides</a>
+      <a href="/corporate.html" class="block py-2 text-gray-700 font-medium">Power Up @ Work</a>
+      <a href="/coaching.html" class="block py-2 text-gray-700 font-medium">Fuel Lab</a>
+      <a href="/stories.html" class="block py-2 text-gray-700 font-medium">Stories & Impact</a>
+      <a href="/coaching.html#contact" class="block mt-2 text-center btn-primary rounded-full px-5 py-2.5 font-semibold">Get Started</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero-gradient py-16 md:py-24">
+      <div class="container mx-auto px-6 text-center md:text-left">
+        <h1 class="text-3xl md:text-5xl font-extrabold">Stories & Impact</h1>
+        <p class="mt-3 text-lg text-gray-700 max-w-3xl">Transformations from the community and insights from the journey—training, race-day lessons, wellness at work, and purpose in motion.</p>
+        <div class="mt-6 flex items-center gap-3 justify-center md:justify-start">
+          <a href="#stories-list" class="btn-primary rounded-full px-7 py-3 font-bold shadow-lg">Explore Stories</a>
+          <a href="/events.html" class="btn-secondary rounded-full px-7 py-3 font-bold shadow-lg">Find Your Next Event</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Story -->
+    <section class="py-14 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <img src="/assets/images/story-featured.jpg" class="rounded-3xl shadow-2xl w-full h-[320px] object-cover"
+                 alt="Featured story"
+                 onerror="this.onerror=null;this.src='https://placehold.co/800x480/fff1f2/ef4444?text=Featured+Story';">
+          </div>
+          <div>
+            <span class="inline-block text-xs font-bold uppercase tracking-widest text-red-500">Featured</span>
+            <h2 class="mt-2 text-2xl md:text-3xl font-extrabold">From First 5K to Marathon: A 12‑Month Journey</h2>
+            <p class="mt-3 text-gray-600">How patience, structure, and a supportive community turned a hesitant jogger into a confident marathon finisher—without burning out.</p>
+            <div class="mt-5 flex gap-3">
+              <a href="#stories-list" class="btn-primary rounded-full px-6 py-2.5 font-semibold">Read More Stories</a>
+              <a href="/coaching.html" class="px-6 py-2.5 rounded-full border border-gray-300 font-semibold">Start Coaching</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filters & Search -->
+    <section class="py-6 bg-white border-y border-gray-200">
+      <div class="container mx-auto px-6 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+        <div class="flex items-center gap-2 flex-wrap">
+          <button class="filter-chip px-4 py-2 rounded-full text-sm active" data-filter="all">All</button>
+          <button class="filter-chip px-4 py-2 rounded-full text-sm" data-filter="training">Training</button>
+          <button class="filter-chip px-4 py-2 rounded-full text-sm" data-filter="nutrition">Nutrition</button>
+          <button class="filter-chip px-4 py-2 rounded-full text-sm" data-filter="race-day">Race Day</button>
+          <button class="filter-chip px-4 py-2 rounded-full text-sm" data-filter="corporate">Corporate</button>
+          <button class="filter-chip px-4 py-2 rounded-full text-sm" data-filter="community">Community</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="relative w-full lg:w-80">
+            <input id="search" type="text" placeholder="Search articles..."
+                   class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500">
+            <i class="fa-solid fa-magnifying-glass text-gray-400 absolute right-3 top-2.5"></i>
+          </div>
+          <select id="sort" class="px-3 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500">
+            <option value="latest">Sort: Latest</option>
+            <option value="alpha">Title: A → Z</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stories Grid -->
+    <section id="stories-list" class="py-14">
+      <div class="container mx-auto px-6">
+        <div id="storiesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Cards injected by JS -->
+        </div>
+        <!-- Pagination (static demo) -->
+        <div class="mt-10 flex justify-center gap-2">
+          <button class="px-3 py-2 rounded-lg border border-gray-300 text-sm disabled:opacity-50" disabled>Prev</button>
+          <button class="px-3 py-2 rounded-lg border border-gray-300 text-sm bg-gray-100">1</button>
+          <button class="px-3 py-2 rounded-lg border border-gray-300 text-sm">2</button>
+          <button class="px-3 py-2 rounded-lg border border-gray-300 text-sm">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="challenge-gradient text-white">
+      <div class="container mx-auto px-6 py-12 text-center">
+        <h2 class="text-2xl md:text-3xl font-extrabold mb-4">Write the next chapter of your story</h2>
+        <a href="/coaching.html" class="bg-white text-red-500 rounded-full px-10 py-4 font-bold inline-block shadow-xl">Get Coaching Support</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same structure and style as home page) -->
+  <footer class="bg-gray-800 text-white">
+    <div class="container mx-auto px-6 py-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold uppercase tracking-wider">The Company</h3>
+          <ul class="space-y-2">
+            <li><a href="/index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+            <li><a href="/coaching.html" class="text-gray-400 hover:text-white transition">Our Team</a></li>
+            <li><a href="/stories.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+            <li><a href="/events.html" class="text-gray-400 hover:text-white transition">Support</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold uppercase tracking-wider">PFS</h3>
+          <ul class="space-y-2">
+            <li><a href="/events.html" class="text-gray-400 hover:text-white transition">Signature Strides</a></li>
+            <li><a href="/corporate.html" class="text-gray-400 hover:text-white transition">Power Up @ Work</a></li>
+            <li><a href="/merchandise.html" class="text-gray-400 hover:text-white transition">The Gear Grid</a></li>
+            <li><a href="/coaching.html" class="text-gray-400 hover:text-white transition">Fuel Lab</a></li>
+            <li><a href="/stories.html" class="text-gray-400 hover:text-white transition">Stories & Impact</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold uppercase tracking-wider">Follow Us</h3>
+          <div class="flex space-x-4 text-gray-400">
+            <a href="#" class="hover:text-white transition" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="hover:text-white transition" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="hover:text-white transition" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="hover:text-white transition" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold uppercase tracking-wider">Stay Updated</h3>
+          <ul class="space-y-2">
+            <li><a href="/events.html" class="text-gray-400 hover:text-white transition">Event Calendar</a></li>
+            <li><a href="/coaching.html" class="text-gray-400 hover:text-white transition">Trainings</a></li>
+          </ul>
+          <form id="newsletterForm" class="mt-4 flex gap-2">
+            <input type="email" required placeholder="Email address"
+                   class="w-full px-3 py-2 rounded-lg border border-gray-600 bg-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500"/>
+            <button class="px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600">Join</button>
+          </form>
+          <p id="newsletterMsg" class="text-xs text-gray-400"></p>
+        </div>
+      </div>
+      <div class="mt-12 border-top border-gray-700 pt-8 text-center text-gray-500 text-sm">
+        <p>© <span id="year"></span> Perfect Fitness Solutions Pvt Ltd. All Rights Reserved. Website by Vivek Pandey.</p>
+        <p class="mt-1">Prices shown are approximate in INR(₹).</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (navToggle && mobileMenu) {
+      navToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    }
+
+    // Footer year
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+
+    // Newsletter mock
+    const newsletterForm = document.getElementById('newsletterForm');
+    const newsletterMsg = document.getElementById('newsletterMsg');
+    if (newsletterForm && newsletterMsg) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        newsletterMsg.textContent = "Thanks for joining! Stay tuned for updates.";
+        newsletterForm.reset();
+      });
+    }
+
+    // Stories dataset (replace with CMS/API)
+    const STORIES = [
+      { id:'s1', title:'From First 5K to Marathon', tag:'training', date:'2025-07-01', img:'/assets/images/story-1.jpg', excerpt:'A 12‑month journey powered by patience and community.' },
+      { id:'s2', title:'Race‑Day Nutrition That Works', tag:'nutrition', date:'2025-06-18', img:'/assets/images/story-2.jpg', excerpt:'Practical fueling strategies for different distances.' },
+      { id:'s3', title:'Strength Training for Runners', tag:'training', date:'2025-05-03', img:'/assets/images/story-3.jpg', excerpt:'Integrate mobility and power without overload.' },
+      { id:'s4', title:'Corporate Wellness: Inclusion First', tag:'corporate', date:'2025-04-21', img:'/assets/images/story-4.jpg', excerpt:'How HR teams create empathy through movement.' },
+      { id:'s5', title:'Pacing the Perfect 10K', tag:'race-day', date:'2025-03-15', img:'/assets/images/story-5.jpg', excerpt:'Dial in effort, splits, and mindset for PBs.' },
+      { id:'s6', title:'Community Spotlight: Weekend Warriors', tag:'community', date:'2025-02-10', img:'/assets/images/story-6.jpg', excerpt:'Meet the people who make our runs special.' },
+      { id:'s7', title:'Sleep & Recovery Basics', tag:'training', date:'2025-01-30', img:'/assets/images/story-7.jpg', excerpt:'Adaptation happens between sessions, not during them.' },
+      { id:'s8', title:'Hydration Myths Debunked', tag:'nutrition', date:'2024-12-11', img:'/assets/images/story-8.jpg', excerpt:'When, what, and how much to drink—really.' },
+      { id:'s9', title:'Half Marathon Taper Tips', tag:'race-day', date:'2024-11-05', img:'/assets/images/story-9.jpg', excerpt:'Sharpen up without losing fitness in race week.' }
+    ];
+
+    const grid = document.getElementById('storiesGrid');
+    const chips = Array.from(document.querySelectorAll('.filter-chip'));
+    const search = document.getElementById('search');
+    const sortSel = document.getElementById('sort');
+
+    let activeTag = 'all';
+    let query = '';
+    let sort = 'latest';
+
+    function cardHTML(s) {
+      return `
+        <article class="bg-white rounded-xl border border-gray-200 overflow-hidden card-hover flex flex-col">
+          <img src="${s.img}" alt="${s.title}" class="w-full h-48 object-cover"
+               onerror="this.onerror=null;this.src='https://placehold.co/640x360/f8fafc/1f2937?text=${encodeURIComponent(s.title)}';">
+          <div class="p-5 flex flex-col flex-grow">
+            <div class="text-xs text-red-500 font-bold uppercase tracking-widest">${s.tag.replace('-',' ')}</div>
+            <h3 class="mt-1 font-bold text-lg">${s.title}</h3>
+            <p class="text-sm text-gray-500">${new Date(s.date).toLocaleDateString()}</p>
+            <p class="mt-2 text-gray-600 flex-grow">${s.excerpt}</p>
+            <div class="mt-4">
+              <a href="/stories.html#${s.id}" class="font-bold text-red-500 hover:text-red-600">Read story →</a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function applyFilters() {
+      let list = [...STORIES];
+      if (activeTag !== 'all') list = list.filter(s => s.tag === activeTag);
+      if (query.trim()) {
+        const q = query.toLowerCase();
+        list = list.filter(s => s.title.toLowerCase().includes(q) || s.excerpt.toLowerCase().includes(q));
+      }
+      if (sort === 'latest') list.sort((a,b)=> new Date(b.date) - new Date(a.date));
+      if (sort === 'alpha') list.sort((a,b)=> a.title.localeCompare(b.title));
+      grid.innerHTML = list.map(cardHTML).join('') || `
+        <div class="col-span-full text-center text-gray-600">No stories match your filters.</div>
+      `;
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeTag = chip.dataset.filter;
+        applyFilters();
+      });
+    });
+
+    search.addEventListener('input', (e) => {
+      query = e.target.value || '';
+      applyFilters();
+    });
+
+    sortSel.addEventListener('change', (e) => {
+      sort = e.target.value;
+      applyFilters();
+    });
+
+    // Initial render
+    applyFilters();
+  </script>
+</body>
+</html>
